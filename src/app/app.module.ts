@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 import { MomentModule } from 'angular2-moment';
-import { DateTimePickerModule } from 'ng-pick-datetime';
 import * as moment from 'moment/moment'
 
 import { AppComponent } from './app.component';
@@ -70,6 +69,7 @@ import { TableComponent } from './UserSide/table/table.component';
 import {AlertComponent} from "./UserSide/alert/alert.component";
 import {AlertService} from "./UserSide/alert/alert.service";
 //fin my moduls import
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
     declarations: [
@@ -119,6 +119,8 @@ import {AlertService} from "./UserSide/alert/alert.service";
   ],
   imports: [
     BrowserModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule,
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
     HttpModule,
     JsonpModule,
@@ -131,7 +133,6 @@ import {AlertService} from "./UserSide/alert/alert.service";
     }),
     NgxMyDatePickerModule,
     MomentModule,
-    DateTimePickerModule,
     SimpleNotificationsModule.forRoot(),
     ReactiveFormsModule,
     LocalStorageModule.withConfig({

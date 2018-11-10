@@ -3,13 +3,12 @@ import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
 import {Voiture} from "../Entity/Voiture/Voiture";
-import  $ from 'jquery';
 import {SigneUpComponent} from "../signe-up/signe-up.component";
 import {LocationFormComponent} from "../Form/location-form/location-form.component";
 import {VoitureService} from "../Service/Voiture.service";
 import {ActivatedRoute} from '@angular/router';
 import {log} from "util";
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'detaille-location',

@@ -3,7 +3,7 @@ import { AdminService } from '../../Service/Admin.service';
 import {UserService} from "../../Service/User.service";
 import {User} from "../../Entity/User/User";
 @Component({
-  moduleId:module.id,
+ // moduleId:module.id,
   selector: 'about',
   templateUrl: 'about.component.html',
   styleUrls: ['about.component.css'],
