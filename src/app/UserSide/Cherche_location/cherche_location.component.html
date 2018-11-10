@@ -1,0 +1,241 @@
+
+<div class="search">
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+
+  <div class="row">
+
+        <!--start colonn 1 -->
+      <div class="search_div">
+       <span class="titre1"> <h2>Recherchez une location de voiture</h2></span>
+
+
+          <!--Marque de Voiture -->
+<!---------- row 1--------------------------->
+        <div class="row">
+          <div class="col-sm-6 col-md-2"><label for="marque_voiture">Marque de Voiture</label></div>
+          <div class="col-sm-6 col-md-4">
+            <select name="marque_voiture" class="form-control" formControlName="marque_voiture">
+              <option  value="ALFA ROMEO">ALFA ROMEO</option>
+              <option  value="ALPINE">ALPINE</option>
+              <option  value="ASTON MARTIN">ASTON MARTIN</option>
+              <option  value="AUDI">AUDI</option>
+              <option  value="BENTLEY">BENTLEY</option>
+              <option  value="BMW">BMW</option>
+              <option  value="BUGATTI">BUGATTI</option>
+              <option  value="CADILLAC">CADILLAC</option>
+              <option  value="CHEVROLET">CHEVROLET</option>
+              <option  value="CHRYSLER">CHRYSLER</option>
+              <option  value="CITROEN">CITROEN</option>
+              <option  value="FERRARI">FERRARI</option>
+              <option  value="FIAT">FIAT</option>
+              <option  value="FORD">FORD</option>
+              <option  value="FORD MUSTANG">FORD MUSTANG</option>
+              <option  value="FORD USA">FORD USA</option>
+              <option  value="HONDA">HONDA</option>
+              <option  value="HYUNDAI">HYUNDAI</option>
+              <option  value="INFINITI">INFINITI</option>
+              <option  value="JAGUAR">JAGUAR</option>
+              <option  value="JEEP">JEEP</option>
+              <option  value="LAMBORGHINI">LAMBORGHINI</option>
+              <option  value="LANCIA">LANCIA</option>
+              <option  value="LAND ROVER">LAND ROVER</option>
+              <option  value="LEXUS">LEXUS</option>
+              <option  value="LOTUS">LOTUS</option>
+              <option  value="MASERATI">MASERATI</option>
+              <option  value="MAZDA">MAZDA</option>
+              <option  value="MCLAREN">MCLAREN</option>
+              <option  value="MERCEDES">MERCEDES</option>
+              <option  value="MINI">MINI</option>
+              <option  value="MITSUBISHI">MITSUBISHI</option>
+              <option  value="MORGAN">MORGAN</option>
+              <option  value="NISSAN">NISSAN</option>
+              <option  value="OPEL">OPEL</option>
+              <option  value="PEUGEOT">PEUGEOT</option>
+              <option  value="PORSCHE">PORSCHE</option>
+              <option  value="RENAULT">RENAULT</option>
+              <option  value="ROLLS-ROYCE">ROLLS-ROYCE</option>
+              <option  value="SEAT">SEAT</option>
+              <option  value="SUBARU">SUBARU</option>
+              <option  value="SUZUKI">SUZUKI</option>
+              <option  value="TESLA">TESLA</option>
+              <option  value="TOYOTA">TOYOTA</option>
+              <option  value="VOLKSWAGEN">VOLKSWAGEN</option>
+              <option  value="VOLVO">VOLVO</option>
+              <option  value="COOPER">COOPER</option>
+
+            </select>
+          </div>
+    <!--modéle de Voiture -->
+
+          <div class="col-sm-6 col-md-2"><label for="model_voiture">Modéle de Voiture</label></div>
+          <div class="col-sm-6 col-md-4"><input type="text" name="model_voiture"  formControlName="model_voiture" class="form-control" placeholder="Modéle de Voiture"></div>
+        </div>
+
+        <!---------- row 2 --------------------------->
+        <!--modéle de Voiture -->
+        <div class="row">
+
+          <div class="col-sm-6 col-md-2"><label for="type_voiture">Type voiture</label></div>
+          <div class="col-sm-6 col-md-4">
+            <select name="type_voiture" class="form-control" formControlName="type_voiture">
+              <option  value="Voiture de tourisme‎ "> Voiture de tourisme‎ </option>
+              <option  value="Voiture de sport‎"> Voiture de sport‎ ‎ </option>
+              <option  value="Voiture de course‎"> Voiture de course‎  ‎ </option>
+              <option  value="Voiturette de golf‎"> Voiturette de golf  ‎ </option>
+              <option  value="Voiture électrique‎"> Voiture électrique  ‎ </option>
+              <option  value="Véhicule rail-route‎"> Véhicule rail-route  ‎ </option>
+              <option  value="‎Véhicule d'intérêt général">Véhicule d'intérêt général   ‎ </option>
+
+            </select>
+          </div>
+
+          <!--Nombre Personne-->
+
+          <div class="col-sm-6 col-md-2"><label for="">Nombre Personne</label></div>
+          <div class="col-sm-6 col-md-4">
+            <select name="nombre_personne_voiture" class="form-control" formControlName="nombre_personne_voiture">
+              <option *ngFor="let i of tab"  value="{{i}}">{{i}}</option>
+            </select>
+          </div>
+        </div>
+
+        <!---------- row 3--------------------------->
+
+        <!--Type de Carbirant -->
+        <div class="row">
+          <div class="col-sm-6 col-md-2"><label for="type_carbirant_voiture">Type de Carbirant</label></div>
+          <div class="col-sm-6 col-md-4">
+            <select name="type_carbirant_voiture" class="form-control" formControlName="type_carbirant_voiture" >
+              <option  value="Gasoil" selected>Gasoil</option>
+              <option  value="Disiel">Disiel</option>
+            </select>
+          </div>
+
+        <!-- Date Début location -->
+
+
+
+          <div class="col-sm-6 col-md-2"><label for="reservoire_voiture">Réservoire Voiture</label></div>
+          <div class="col-sm-6 col-md-4">
+            <select name="reservoire_voiture" class="form-control" formControlName="reservoire_voiture">
+              <option  value="Plein">Plein</option>
+              <option  value="Vide">Vide</option>
+            </select>
+          </div>
+        </div>
+
+        <!---------- row 4 --------------------------->
+        <!--Nombre coussin -->
+        <div class="row">
+          <div class="col-sm-6 col-md-2"><label for="couleur_voiture">Couleur Voiture </label></div>
+          <div class="col-sm-6 col-md-4">
+            <select name="couleur_voiture" class="form-control"  formControlName="couleur_voiture">
+              <option  value="noir">Noir</option>
+              <option  value="Firari">Rouge</option>
+              <option  value="Mercides">Bleu</option>
+              <option  value="Huinday">Verte</option>
+              <option  value="blanche">Blanche</option>
+              <option  value="Violet">Violet</option>
+              <option  value="Bleu acier">Bleu acier</option>
+              <option  value="Bleu ciel">Bleu ciel</option>
+              <option  value="Cacao">Cacao</option>
+              <option  value="Cachou">Cachou </option>
+              <option  value="Café">Café</option>
+              <option  value="Cannelle">Cannelle</option>
+              <option  value="Carotte">Carotte</option>
+              <option  value="Chamois">Chamois</option>
+              <option  value="Chocolat">Chocolat</option>
+              <option  value="Citrouille">Citrouille</option>
+              <option  value="Corail">Corail</option>
+              <option  value="Cramoisi">Cramoisi</option>
+              <option  value="Crème">Crème</option>
+              <option  value="Cuivre">Cuivre</option>
+              <option  value="Émeraude">Émeraude</option>
+              <option  value="Fauve">Fauve</option>
+              <option  value="Flave">Flave</option>
+              <option  value="Fumée">Fumée</option>
+              <option  value="Glauque">Glauque</option>
+              <option  value="Gris">Gris</option>
+              <option  value="Gris acier">Gris acier</option>
+              <option  value="Jaune canari">Jaune canari</option>
+              <option  value="Jaune citron">Jaune citron</option>
+              <option  value="Jaune d'or">Jaune d'or</option>
+              <option  value="Kaki">Kaki</option>
+              <option  value="Lime">Lime</option>
+              <option  value="Noir">Noir</option>
+              <option  value="Noir de carbone ">Noir de carbone </option>
+              <option  value="Orange">Orange</option>
+              <option  value="Pistache">Pistache</option>
+              <option  value="Rose">Rose</option>
+              <option  value="Rouge cardinal">Rouge cardinal</option>
+              <option  value="Rouge cerise">Rouge cerise</option>
+            </select>
+          </div>
+
+          <!-- Date Début location -->
+          <div class="col-sm-6 col-md-2"><label for="">Date/Heure Début</label></div>
+          <div class="col-sm-6 col-md-4">
+            <time-picker></time-picker>
+          </div>
+
+        </div>
+
+        <!--Type voiture-->
+
+        <div class="row">
+          <div class="col-sm-6 col-md-2"><label for="boite_vitesse_voiture">Boîte de vitesses</label></div>
+          <div class="col-sm-6 col-md-4">
+            <select name="boite_vitesse_voiture" class="form-control" formControlName="boite_vitesse_voiture">
+              <option  value="Automatique">Automatique</option>
+              <option  value="Manual">Manual</option>
+            </select>
+          </div>
+
+
+
+
+
+          <div class="col-sm-6 col-md-2"><label for="">Date/Heure Fin</label></div>
+          <div class="col-sm-6 col-md-4">
+            <time-picker></time-picker>
+          </div>
+
+              </div>
+
+
+          <!-- Date Début location -->
+        <!---------- row 5 --------------------------->
+
+        <!--boite_vitesse_voiture-->
+        <div class="row">
+
+
+
+
+          </div>
+
+
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-success btn-block btn-lg" >Chercher<span class="glyphicon glyphicon-send"></span></button>
+          </div>
+        </div>
+
+      </div>
+        <!--fin colonn 2 -->
+
+
+    <!--start colonn 2 -->
+
+  </form>
+
+
+
+  <div class="resultat de recherche ">
+    <location-layout [list_Voiture]="list_Voiture"></location-layout>
+  </div>
+
+</div>

@@ -1,0 +1,71 @@
+<div  bsModal #myModal id="" class="container">
+  <div class="row">
+    <div class="  col-md-6">
+      <div class="panel panel-login">
+
+        <!--panel-heading -->
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6">
+              <a href="javascript:void(0)" class="active" id="login-form-link" >Login</a>
+            </div>
+            <div class="col-xs-6">
+              <a href="javascript:void(0)" id="register-form-link">Register</a>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <!--panel-heading -->
+        <!--panel-body -->
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <!--form login -->
+              <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                <!--change here-->
+                <div class="form-group">
+                  <label for="username">Adresse e-mail </label>
+                  <input type="text" name="email_user" id="email_user"  [(ngModel)] = "user.email_user" tabindex="1" class="form-control" placeholder="Adresse e-mail" value="">
+                </div>
+                <div class="form-group">
+                  <label for="password">Mot de passe</label>
+                  <input type="password" name="passwordd" id="passwordd" [(ngModel)] = "user.passwordd" tabindex="2" class="form-control" placeholder="Mot de passe">
+                </div>
+                <div class="form-group text-center">
+                  <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                  <label for="remember"> Remember Me</label>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In" (click)="login()"  >
+                    </div>
+                  </div>
+                </div>
+                <!--change -->
+              </form>
+              <!--form login -->
+
+              <!--form register -->
+              <form id="register-form" action="#" method="post" role="form" style="display: none;">
+
+                <hr class="colorgraph">
+                <!--change -->
+
+                        <user-form></user-form>
+                        <hr class="colorgraph">
+
+
+                <!--change -->
+              </form>
+              <!--form register -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

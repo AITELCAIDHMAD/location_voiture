@@ -1,0 +1,132 @@
+<div class="container">
+<nav-bar></nav-bar>
+<slide-show></slide-show>
+
+<div class="location">
+  <div class="row">
+
+    <hr/>
+  </div>
+
+  <div class="row">
+    <span class="type_voiture"> <h2 id ="top" class="text-center ">Détaille de location  </h2></span>
+    <div class="col-sm-2 col-md-7 ">
+      <div class="thumbnail">
+        <img class="imageVoiture" src="{{voiture.image_voiture}}" alt="image voiture">
+        <span class="type_voiture"><h3>{{voiture.type_voiture}}</h3></span>
+      </div>
+    </div>
+
+
+
+    <div class="col-sm-6 col-md-5">
+      <div class="thumbnail">
+          <div class="caption">
+
+            <table class="table table-bordered table-striped table-hover">
+              <tr class="info">
+                <th> Modél</th>
+                <td>{{voiture.marque_voiture}}</td>
+              </tr>
+              <tr class="danger">
+                <th>Date de sortie </th>
+                <td>{{voiture.date_sortie_voiture}}</td>
+              </tr>
+              <tr class="warning">
+                <th> Nombre de personne</th>
+                <td>{{voiture.nombre_personne_voiture}}</td>
+              </tr>
+              <tr class="active">
+                <th>Type de carbirant </th>
+                <td>{{voiture.type_carbirant_voiture}}</td>
+              </tr>
+              <tr class="success">
+                <th>Couleur </th>
+                <td>{{voiture.couleur_voiture}}</td>
+              </tr>
+              <tr class="info">
+                <th> Nombre portes</th>
+                <td>{{voiture.nombre_portes_voiture}}</td>
+              </tr>
+              <tr class="danger">
+                <th>Nombre coussin </th>
+                <td>{{voiture.nombre_coussin_voiture}}</td>
+              </tr>
+              <tr class="warning">
+                <th>Nombre personne </th>
+                <td>{{voiture.nombre_personne_voiture}}</td>
+              </tr>
+              <tr class="success">
+                <th> Nombre kilometre</th>
+                <td>{{voiture.nombre_kilometre_voiture}}</td>
+              </tr>
+              <tr class="info">
+                <th>Nombre kilometre limte </th>
+                <td>{{voiture.nombre_kilometre_limte}}</td>
+              </tr>
+              <tr class="danger">
+                <th> Clim dans voiture</th>
+                <td>{{voiture.clim_dans_voiture}}</td>
+              </tr>
+              <tr class="warning">
+                <th>Type voiture </th>
+                <td>{{voiture.type_voiture}}</td>
+              </tr>
+              <tr class="success">
+                <th> Boite vitesse</th>
+                <td>{{voiture.boite_vitesse_voiture}}</td>
+              </tr>
+              <tr class="info">
+                <th> Réservoire</th>
+                <td>{{voiture.reservoire_voiture}}</td>
+              </tr>
+              <tr class="warning">
+                <th> Bagage</th>
+                <td>{{voiture.bagage_voiture}}</td>
+              </tr>
+              <tr class="danger">
+                <th>Prix location par jour  </th>
+                <td>{{voiture.prix_location_voiture}}</td>
+              </tr>
+              <tr class="active">
+                <th>Commentaire </th>
+                <td>{{voiture.commentaire_voiture}}</td>
+              </tr>
+
+            </table>
+            <p>
+          <a  class="btn btn-primary btn-block btn-lg"  data-toggle="modal" data-target="#reserver" >Réservé cette voiture</a>
+           </p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+<location-layout [list_Voiture]="list_Voiture"></location-layout>
+<myfooter></myfooter>
+</div>
+
+
+
+<!-- Modal Login -->
+<div class="modal fade" id="reserver" tabindex="-1" role="dialog" aria-labelledby="reserver" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" #closeBtn><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+      </div>
+      <div class="modal-body">
+        <!------------- here the body of modal ---------------------->
+        <location-form></location-form>
+      </div>
+    </div>
+    <div class="modal-footer ">
+      <!------------- here the footer  of modal  we can put buttons here ---------------------->
+    </div>
+  </div>
+  <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->

@@ -1,0 +1,45 @@
+.fade.in {
+  opacity: 1;
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal-backdrop .fade .in {
+  opacity: 0.5 !important;
+}
+
+
+.modal-backdrop.fade {
+  opacity: 0.5 !important;
+}
+
+
+.modal-backdrop {
+  z-index: -1;
+}
+
+
+.modal {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.modal {
+  display: block;
+}
+.modal-body:before,
+.modal-body:after {
+  display: table;
+  content: " ";
+}
+.modal-header:before,
+.modal-header:after {
+  display: table;
+  content: " ";
+}

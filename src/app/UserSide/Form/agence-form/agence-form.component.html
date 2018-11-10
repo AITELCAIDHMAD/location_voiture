@@ -1,0 +1,237 @@
+<div class="">
+
+  <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Informations Agence</legend>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Adresse Agence</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="adresse_agence" placeholder="Adresse Agence" class="form-control"  type="text" [(ngModel)] ="agence.adresse_agence">
+          </div>
+        </div>
+      </div>
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Tél 1</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="tel1_agence" placeholder="(212)6202-1212" class="form-control" type="text" [(ngModel)] ="agence.tel1_agence">
+          </div>
+        </div>
+      </div>
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Tél 2</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="tel2_agence" placeholder="(212)6202-1212" class="form-control" type="text" [(ngModel)] ="agence.tel2_agence">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Fax 1</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="fax1_agence" placeholder="(212)5202-1212" class="form-control" type="text"  [(ngModel)] ="agence.fax1_agence">
+          </div>
+        </div>
+      </div>
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Fax 2</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="fax2_agence" placeholder="(212)5202-1212" class="form-control" type="text" [(ngModel)] ="agence.fax2_agence">
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">E-Mail</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input name="email_agence" placeholder="E-Mail Address" class="form-control"  type="text" [(ngModel)] ="agence.email_agence">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Position Map</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input name="position_map_agence" placeholder="Position Map" class="form-control"  type="text" [(ngModel)] ="agence.position_map_agence">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Success message -->
+      <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <!--------------------------------------------------------------->
+          <!--<button type="submit" class="btn btn-success" >Envoyer <span class="glyphicon glyphicon-send"  (click)="envoyerFormule()"></span></button>-->
+          <button type="submit" class="btn btn-primary" >Modifier <span class="glyphicon glyphicon-send" (click)="modifierFormule()"></span></button>
+          <!--<button type="submit" class="btn btn-danger" >Annuler <span class="glyphicon glyphicon-alert" (click)="annulerFormule()"></span></button>-->          <!------------------------------------------------------------->
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div><!-- /.container -->
+
+
+<script>
+  $(document).ready(function() {
+    $('#contact_form').bootstrapValidator({
+      // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+        first_name: {
+          validators: {
+            stringLength: {
+              min: 2,
+            },
+            notEmpty: {
+              message: 'Please supply your first name'
+            }
+          }
+        },
+        last_name: {
+          validators: {
+            stringLength: {
+              min: 2,
+            },
+            notEmpty: {
+              message: 'Please supply your last name'
+            }
+          }
+        },
+        email: {
+          validators: {
+            notEmpty: {
+              message: 'Please supply your email address'
+            },
+            emailAddress: {
+              message: 'Please supply a valid email address'
+            }
+          }
+        },
+        phone: {
+          validators: {
+            notEmpty: {
+              message: 'Please supply your phone number'
+            },
+            phone: {
+              country: 'US',
+              message: 'Please supply a vaild phone number with area code'
+            }
+          }
+        },
+        address: {
+          validators: {
+            stringLength: {
+              min: 8,
+            },
+            notEmpty: {
+              message: 'Please supply your street address'
+            }
+          }
+        },
+        city: {
+          validators: {
+            stringLength: {
+              min: 4,
+            },
+            notEmpty: {
+              message: 'Please supply your city'
+            }
+          }
+        },
+        state: {
+          validators: {
+            notEmpty: {
+              message: 'Please select your state'
+            }
+          }
+        },
+        zip: {
+          validators: {
+            notEmpty: {
+              message: 'Please supply your zip code'
+            },
+            zipCode: {
+              country: 'US',
+              message: 'Please supply a vaild zip code'
+            }
+          }
+        },
+        comment: {
+          validators: {
+            stringLength: {
+              min: 10,
+              max: 200,
+              message:'Please enter at least 10 characters and no more than 200'
+            },
+            notEmpty: {
+              message: 'Please supply a description of your project'
+            }
+          }
+        }
+      }
+    })
+      .on('success.form.bv', function(e) {
+        $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+        $('#contact_form').data('bootstrapValidator').resetForm();
+
+        // Prevent form submission
+        e.preventDefault();
+
+        // Get the form instance
+        var $form = $(e.target);
+
+        // Get the BootstrapValidator instance
+        var bv = $form.data('bootstrapValidator');
+
+        // Use Ajax to submit form data
+        $.post($form.attr('action'), $form.serialize(), function(result) {
+          console.log(result);
+        }, 'json');
+      });
+  });
+
+
+
+</script>

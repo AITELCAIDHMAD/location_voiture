@@ -1,0 +1,34 @@
+
+<div class="formee">
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4" *ngFor="let voiture of list_Voiture">
+      <div class="thumbnail">
+        <h4>
+          {{voiture.marque_voiture}} {{voiture.date_sortie_voiture}}
+          <span class="label label-info info">
+                        <span data-toggle="tooltip" title="viewed">257 <b class="glyphicon glyphicon-eye-open"></b></span>
+                        <span data-toggle="tooltip" title="viewed">3 <b class="glyphicon glyphicon-star"></b></span>
+                        <span data-toggle="tooltip" title="Bootstrap version">3.0.3</span>
+                    </span>
+        </h4>
+        <div class="col-sm-6 col-md-12 image_voiture ">
+          <img class="img-responsive img-thumbnail" src="{{voiture.image_voiture}}" alt="{{voiture.type_voiture}}">
+        </div>
+        <span class="type_voiture"><h3>{{voiture.type_voiture}}</h3></span>
+        <ul>
+          <li><label>Modél :</label>{{voiture.marque_voiture}}</li>
+          <li><label>Date de sortie :</label>{{voiture.date_sortie_voiture}}</li>
+          <li><label>Nombre de personne :</label>{{voiture.nombre_personne_voiture}}</li>
+          <li><label>Type de carbirant :</label>{{voiture.type_carbirant_voiture}}</li>
+          <li><label>Couleur : </label>{{voiture.couleur_voiture}}</li>
+        </ul>
+
+        <a routerLink="/detaille_location" class="btn btn-success col-xs-12" role="button">Modifier</a><br><br>
+        <a routerLink="/detaille_location" class="btn btn-danger col-xs-12" role="button">Annuler</a>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+

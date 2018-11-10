@@ -1,0 +1,143 @@
+<div class="">
+  <form class="  form-horizontal " action="" method="post"  id="contact_form">
+    <fieldset>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+
+        <label class="col-md-4 col-xs-4  col-sm-4  col-lg-4  control-label">Nom Utilisateur</label>
+        <div class="col-md-4 col-xs-4  col-sm-8  col-lg-4   inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="nom_user" placeholder="Nom Utilisateur" class="form-control"  type="text" [(ngModel)] ="user.nom_user">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" >Prenom Utilisateur</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="prenom_user" placeholder="Prenom Utilisateur" class="form-control"  type="text" [(ngModel)] ="user.prenom_user">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Tél 1</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="tel1_user" placeholder="(212)6202-1212" class="form-control" type="text" [(ngModel)] ="user.tel1_user">
+          </div>
+        </div>
+      </div>
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Tél 2</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="tel2_user" placeholder="(212)6202-1212" class="form-control" type="text" [(ngModel)] ="user.tel2_user">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">E-Mail</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input name="email_user" placeholder="E-Mail adresse" class="form-control"  type="text" [(ngModel)] ="user.email_user">
+          </div>
+        </div>
+      </div>
+
+
+      <div *ngIf="!adminUse">
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Mot de Passe</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input name="password_user1" placeholder="Mot de Passe" class="form-control"  type="text" [(ngModel)] ="password_user1">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Répeter Mot de Passe</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input name="password_user2" placeholder="Répeter Mot de Passe" class="form-control"  type="text" [(ngModel)] ="password_user2">
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Ville</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input name="ville_user" placeholder="Ville Utilisateur" class="form-control"  type="text" [(ngModel)] ="user.ville_user">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Adresse</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input name="adresse_user" placeholder="Address" class="form-control" type="text" [(ngModel)] ="user.adresse_user">
+          </div>
+        </div>
+      </div>
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Code Postale</label>
+        <div class="col-md-4 col-xs-4  col-sm-4  col-lg-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input name="code_postal_user" placeholder="Code Postale" class="form-control"  type="text" [(ngModel)] ="user.code_postal_user">
+          </div>
+        </div>
+      </div>
+
+      <!-- Success message -->
+      <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 col-xs-4  col-sm-4  col-lg-4 control-label"></label>
+        <div class="col-md-6 col-xs-6  col-sm-6  col-lg-4">
+          <!------------------------------------------------------------->
+          <button type="submit" class="btn btn-success" (click)="login()" data-dismiss="modal">Envoyer <span class="glyphicon glyphicon-send" (click)="envoyerFormule()"></span></button>
+          <!--<button type="submit" class="btn btn-primary" >Modifier <span class="glyphicon glyphicon-send" (click)="modifierFormule()"></span></button> -->
+          <button type="submit" class="btn btn-danger" >Annuler <span class="glyphicon glyphicon-alert" (click)="annulerFormule()"></span></button>
+          <!------------------------------------------------------------->
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div><!-- /.container -->

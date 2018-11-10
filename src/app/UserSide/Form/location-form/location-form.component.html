@@ -1,0 +1,65 @@
+<div class="">
+
+  <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Location form!</legend>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Date Debut Location</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <time-picker></time-picker>
+          </div>
+        </div>
+      </div>
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Date Fin Location</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <time-picker></time-picker>          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Radio Button
+      <div *ngif="!adminIsConnected">
+      <div class="form-group" >
+        <label for="valider" class="col-md-4 control-label">Valider Locations </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <div id="valider_location" class="btn-group">
+              <a class="btn btn-primary btn-sm active" data-toggle="valider" data-title="Y">Oui</a>
+              <a class="btn btn-primary btn-sm notActive" data-toggle="valider" data-title="N">NON</a>
+            </div>
+            <input type="hidden" name="validerr" id="validerr">
+          </div>
+        </div>
+      </div>
+      </div>
+-->
+      <!-- Success message -->
+      <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-success" >Envoyer <span class="glyphicon glyphicon-send"></span></button>
+          <button type="submit" class="btn btn-danger" >Annuler <span class="glyphicon glyphicon-alert"></span></button>
+
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div><!-- /.container -->
+

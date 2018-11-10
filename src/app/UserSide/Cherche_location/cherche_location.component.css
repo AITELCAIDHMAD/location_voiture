@@ -1,0 +1,42 @@
+.search{
+  background-color: #ff9a00;
+  color: #254b62;
+  text-align: left;
+  font-family: ;
+  font-size: ;
+  margin-top: 10px;
+}
+
+search_div.{
+  display: inline-block;
+  max-width: 50%;
+
+}
+
+.video{
+  padding-top:20px;
+  margin-top:40px ;
+  display: inline-block;
+
+}
+video{
+  max-width: 400px;
+  max-height: 500px;
+
+}
+
+.row{
+  margin: 10px;
+  padding: 5px;
+}
+
+button[type='submit']{
+    margin-right:60px ;
+}
+
+.titre1{
+  color: #a6e1ec;
+  text-align: center;
+  padding: 20px;
+
+}
