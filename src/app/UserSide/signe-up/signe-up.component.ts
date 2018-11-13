@@ -20,11 +20,13 @@ export class SigneUpComponent /*implements CloseGuard, ModalComponent<CustomModa
   @ViewChild('lgModal') bgModel;
   context: CustomModalContext;
   user: User;
+  user2: User;
   dismiss:string;
 
   /*public dialog: DialogRef<CustomModalContext>,*/
   constructor(public service:UserService,private localStorageService: LocalStorageService,private router: Router,private location: Location) {
     this.user=new User();
+    this.user2=new User();
     this.dismiss="";
     //this.context = dialog.context;
     $(function() {
@@ -60,9 +62,9 @@ export class SigneUpComponent /*implements CloseGuard, ModalComponent<CustomModa
 
     this.service.connectUser(this.user).subscribe((data)=>{
       //data is your patient list
-      this.user=data[0];
+      this.user2=data[0];
 
-      if(this.user==undefined){
+      if(this.user2==undefined || this.user2==null){
       }else{
         this.dismiss="modal";
         console.log("route ="+this.router.url);

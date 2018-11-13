@@ -32,6 +32,11 @@ export class AdminLoginComponent implements OnInit {
   private  login():void{
    // alert(" loggin "+this.admin.password+"  "+this.admin.username);
   if((this.admin.password!=null) && (this.admin.password.toString().length!=0) && (this.admin.username!=null) && (this.admin.username.toString().length!=0)){
+    
+    console.log("->>>>>>>>>>>>>>> ADMIN")
+    console.log( this.admin)
+
+   
     this.service.connectAdmin(this.admin).subscribe((data)=>{
       console.log("data=>"+JSON.stringify(data[0]));
 

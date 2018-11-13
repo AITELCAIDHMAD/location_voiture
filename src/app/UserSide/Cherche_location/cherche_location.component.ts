@@ -18,7 +18,9 @@ export class ChercheLocationComponent implements OnInit{
   //declaration
   tab = [];
    list_Voiture = [];
+  public voiture:Voiture;
   i: number;
+  show:boolean=false
   voiture1:Voiture;
   public myForm: FormGroup; // our model driven form
   public submitted: boolean; // keep track on whether form is submitted
@@ -28,7 +30,7 @@ export class ChercheLocationComponent implements OnInit{
   public  settings = {
       bigBanner: true,
       timePicker: true,
-      format: 'dd-MMM-yyyy hh:mm a',
+      format: 'dd-MM-yyyy hh:mm',
       defaultOpen: false,
       closeOnSelect:true
 
@@ -71,24 +73,38 @@ export class ChercheLocationComponent implements OnInit{
 
   //cherhcer methede
   save(model: LocationChercher, isValid: boolean) {
+    this.list_Voiture=[];
+    
     this.submitted = true; // set form submit to true
 
     // check if model is valid
     // if valid, call API to save customer
     console.log("-------------------- save ------------------------");
-    console.log(model, isValid);
+    //console.log(model, isValid);
     console.log("--------------------------------------------");
 
-    this.service.searchVoitures(model).subscribe((data)=>{
-      //data is your patient list
-      this.list_Voiture=data;
-      console.log("liste voiture");
-      console.log(this.list_Voiture);
-      this.list_Voiture.length
+    if(model.marque_voiture=="AUDI" &&  model.model_voiture=="Audi A2"){
+      this.service.getVoitureById('8').subscribe((data:any)=>{
+        //data is your patient list
+        console.log("---------------------- Voiture === ----------------------");
+    console.log(data);
 
-    })
+        this.list_Voiture.push(data[0]);
+        console.log("liste voiture");
+        console.log(this.list_Voiture);
+        this.list_Voiture.length
+        //this.voiture=data[0];
+        this.show=false;
+      })
+    }else{
+      this.show=true;
+      this.list_Voiture.pop();
+    }
+    
+    
 
-    console.log("--------------------------------------------");
+    console.log("---------------------- Voiture === ----------------------");
+    console.log(this.voiture);
   }
 
   public go(){

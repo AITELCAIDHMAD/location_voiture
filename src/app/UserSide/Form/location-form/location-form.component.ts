@@ -4,13 +4,19 @@ import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
 import {NgbModal, NgbActiveModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import {LocationService} from "../../Service/Location.service";
-import {Location} from "../../Entity/Locations/Location";
+import {LocationM} from "../../Entity/Locations/Location";
+import { FormBuilder, FormGroup } from '@angular/forms';
 //----------------------------------------------------------
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+
+import { DatePicker } from 'angular2-datetimepicker';
+
 
 export class CustomModalContext extends BSModalContext {
+ 
+  
 
 }
 @Component({
@@ -19,13 +25,33 @@ export class CustomModalContext extends BSModalContext {
   styleUrls: ['location-form.component.css'],
   providers:[LocationService]
 })
-export class LocationFormComponent  {
+export class LocationFormComponent   {
   adminIsConnected:boolean;
- // context: CustomModalContext;
-  @Input() location: Location;
+  public myForm: FormGroup; // our model driven form
+  public submitted: boolean; // keep track on whether form is submitted
+  public events: any[] = []; // use later to display form changes
+  show:boolean=false;
 
-  constructor(public service:LocationService) {
-    this.location=new Location();
+ // context: CustomModalContext;
+  @Input() location: LocationM;
+
+  constructor(private router: Router,public service:LocationService,private modalService: NgbModal,private _fb: FormBuilder) {
+
+    this.location=new LocationM();
+
+    DatePicker.prototype.ngOnInit = function() {
+      this.settings = Object.assign(this.defaultSettings, this.settings);
+      if (this.settings.defaultOpen) {
+      this.popover = true;
+      }
+      this.date = new Date();
+      };
+
+
+      DatePicker.prototype.done = function () {
+        this.popover = false;
+        this.onDateSelect.emit(this.date);
+      }
 
     //this.context = dialog.context;
 
@@ -53,6 +79,11 @@ export class LocationFormComponent  {
 
   }
   //-------------------------------------------
+
+  go() {
+    this.show=true;
+     
+  }
 }
 
 

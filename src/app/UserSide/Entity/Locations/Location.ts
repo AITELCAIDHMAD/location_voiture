@@ -1,5 +1,5 @@
 
-export class Location{
+export class LocationM{
   constructor(
     public id_location:number=0,
     public date_debut_location:string="",

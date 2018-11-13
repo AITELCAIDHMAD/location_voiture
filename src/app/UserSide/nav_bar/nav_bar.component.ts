@@ -26,7 +26,7 @@ export class NavBarComponent {
 
 
 
-    if(localStorage.getItem('connected')!="" && localStorage.getItem('connected')!=isNullOrUndefined){
+    if( localStorage.getItem('connected')!=undefined && localStorage.getItem('connected')!=null && localStorage.getItem('connected')!=""){
       if(localStorage.getItem('connected')=="true")
         this.isConnected=true;
         else

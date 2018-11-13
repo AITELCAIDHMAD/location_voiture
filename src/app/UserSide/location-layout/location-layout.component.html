@@ -5,11 +5,9 @@
     <div class="col-sm-6 col-md-4" *ngFor="let voiture of list_Voiture">
       <div class="thumbnail">
         <h4>
-          {{voiture.marque_voiture}} {{voiture.date_sortie_voiture}}
-          <span class="label label-info info">
-                        <span data-toggle="tooltip" title="viewed">257 <b class="glyphicon glyphicon-eye-open"></b></span>
-                        <span data-toggle="tooltip" title="viewed">3 <b class="glyphicon glyphicon-star"></b></span>
-                        <span data-toggle="tooltip" title="Bootstrap version">3.0.3</span>
+          {{voiture.marque_voiture}} {{voiture.model_voiture}}
+          <span class="label label-info info float-right">
+                        <span data-toggle="tooltip" title="viewed"><b class="glyphicon glyphicon-star"></b></span>
                     </span>
         </h4>
         <div class="col-sm-6 col-md-12  ">
@@ -21,9 +19,14 @@
         <table class="table table-bordered table-striped table-hover">
 
           <tr class="info">
-            <th>Modél </th>
+            <th>Marque </th>
             <td>{{voiture.marque_voiture}}</td>
           </tr>
+          <tr class="info">
+              <th>modèle </th>
+              <td>{{voiture.model_voiture}}</td>
+            </tr>
+
           <tr class="danger">
             <th>Date de sortie </th>
             <td>{{voiture.date_sortie_voiture}}</td>
@@ -38,8 +41,8 @@
             <td>{{voiture.type_carbirant_voiture}}</td>
           </tr>
           <tr class="success">
-            <th>Couleur</th>
-            <td>{{voiture.couleur_voiture}}</td>
+            <th>Prix</th>
+            <td>{{voiture.prix_location_voiture}}</td>
           </tr>
         </table>
 

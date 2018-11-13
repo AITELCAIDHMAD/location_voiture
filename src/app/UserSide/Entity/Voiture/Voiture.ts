@@ -19,6 +19,7 @@ export class Voiture{
   public bagage_voiture:string="",
   public prix_location_voiture:number=0,
   public image_voiture:string="",
-  public  commentaire_voiture:string=""
+  public  commentaire_voiture:string="",
+  public model_voiture:string="",
           ){}
 }

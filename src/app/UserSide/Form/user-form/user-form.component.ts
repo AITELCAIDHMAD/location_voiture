@@ -1,3 +1,4 @@
+import { User } from './../../Entity/User/User';
 import { Component,ViewChild, ElementRef,OnInit,Input } from '@angular/core';
 import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
 import {NgbModal, NgbActiveModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
@@ -6,7 +7,6 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
-import {User} from "../../Entity/User/User";
 import {UserService} from "../../Service/User.service";
 
 //----------------------------------------------------------
@@ -35,12 +35,16 @@ export class UserFormComponent {
   }
 
   ngOnInit(){
-    this.user=new User();
+    if(this.user==undefined || this.user==null){
+      this.user=new User();
 
-      this.service.getUserById(localStorage.getItem('idUser')).subscribe((data)=>{
+      this.service.getUserById(1+"").subscribe((data)=>{
+        console.log(">>>>>>>>>>>>>>>>>>> "+data[0]);
         if(data[0]!=undefined && data[0]!=null)
                  this.user=data[0];
       })
+    }
+       
 
 
 
