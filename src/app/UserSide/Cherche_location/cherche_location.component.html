@@ -10,7 +10,6 @@
 
 
           <!--Marque de Voiture -->
-<!---------- row 1--------------------------->
         <div class="row">
           <div class="col-sm-6 col-md-2"><label for="marque_voiture">Marque de Voiture</label></div>
           <div class="col-sm-6 col-md-4">
@@ -68,7 +67,21 @@
     <!--modéle de Voiture -->
 
           <div class="col-sm-6 col-md-2"><label for="model_voiture">Modéle de Voiture</label></div>
-          <div class="col-sm-6 col-md-4"><input type="text" name="model_voiture"  formControlName="model_voiture" class="form-control" placeholder="Modéle de Voiture"></div>
+          
+          <div class="col-sm-6 col-md-4">
+            <select name="model_voiture" class="form-control" formControlName="model_voiture">
+              <option  value="ALFA ROMEO">Audi A4</option>
+              <option  value="ALPINE">Audi A8</option>
+              <option  value="ASTON MARTIN">Audi A6</option>
+              <option  value="AUDI">Audi A3</option>
+              <option  value="BENTLEY">Audi A4</option>
+        
+
+            </select>
+          </div>
+
+
+        
         </div>
 
         <!---------- row 2 --------------------------->
@@ -175,7 +188,10 @@
           <!-- Date Début location -->
           <div class="col-sm-6 col-md-2"><label for="">Date/Heure Début</label></div>
           <div class="col-sm-6 col-md-4">
-            <time-picker></time-picker>
+            <angular2-date-picker  (onDateSelect)="go()"
+            [(ngModel)]="date" 
+            [settings]="settings" >
+            </angular2-date-picker>
           </div>
 
         </div>
@@ -197,7 +213,10 @@
 
           <div class="col-sm-6 col-md-2"><label for="">Date/Heure Fin</label></div>
           <div class="col-sm-6 col-md-4">
-            <time-picker></time-picker>
+            <angular2-date-picker  (onDateSelect)="go()"
+            [(ngModel)]="date" 
+            [settings]="settings" >
+            </angular2-date-picker>
           </div>
 
               </div>

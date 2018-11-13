@@ -4,6 +4,8 @@ import {Voiture} from "../Entity/Voiture/Voiture";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {LocationChercher} from "./locationChercher.interface";
 import {VoitureService} from "../Service/Voiture.service";
+import { DatePicker } from 'angular2-datetimepicker';
+import * as moment from 'moment';
 
 
 @Component({
@@ -22,8 +24,32 @@ export class ChercheLocationComponent implements OnInit{
   public submitted: boolean; // keep track on whether form is submitted
   public events: any[] = []; // use later to display form changes
 
+  public date: Date = new Date();
+  public  settings = {
+      bigBanner: true,
+      timePicker: true,
+      format: 'dd-MMM-yyyy hh:mm a',
+      defaultOpen: false,
+      closeOnSelect:true
 
-  constructor(private modalService: NgbModal,private _fb: FormBuilder,private service:VoitureService) {}
+
+  }
+
+  constructor(private modalService: NgbModal,private _fb: FormBuilder,private service:VoitureService) {
+    DatePicker.prototype.ngOnInit = function() {
+      this.settings = Object.assign(this.defaultSettings, this.settings);
+      if (this.settings.defaultOpen) {
+      this.popover = true;
+      }
+      this.date = new Date();
+      };
+
+
+      DatePicker.prototype.done = function () {
+        this.popover = false;
+        this.onDateSelect.emit(this.date);
+      }
+  }
 
   ngOnInit() {
     for (this.i = 1; this.i <= 10; this.i++) {
@@ -63,6 +89,10 @@ export class ChercheLocationComponent implements OnInit{
     })
 
     console.log("--------------------------------------------");
+  }
+
+  public go(){
+
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import {INgxMyDpOptions, IMyDateModel} from 'ngx-mydatepicker';
 @Component({
   selector: 'date-picker',
@@ -38,3 +38,5 @@ export class DatePickerComponent  {
     // date selected
   }
 }
+
+*/

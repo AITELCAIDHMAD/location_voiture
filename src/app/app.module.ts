@@ -40,11 +40,11 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { CustomModal} from "./UserSide/Modal/custom-modal-sample";
 import { App2Component} from "./UserSide/Modal/app2.component";
 import { GaleryComponent } from './UserSide/galery/galery.component';
-import { MapComponent } from './UserSide/map/map.component';
-import { AgmCoreModule } from '@agm/core';
+//import { MapComponent } from './UserSide/map/map.component';
+//import { AgmCoreModule } from '@agm/core';
 import { MesLocationComponent } from './UserSide/mes-location/mes-location.component';
-import { DatePickerComponent} from "./UserSide/Form/user-form/datePicker.component";
-import { TimePickerComponent} from "./UserSide/Form/user-form/timePicker.component";
+//import { DatePickerComponent} from "./UserSide/Form/user-form/datePicker.component";
+//import { TimePickerComponent} from "./UserSide/Form/user-form/timePicker.component";
 import { NgbdModalComponent} from "./UserSide/ngbd-modal/ngbd-modal.component";
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { LocationChercher} from "./UserSide/Cherche_location/locationChercher.interface";
@@ -70,6 +70,9 @@ import {AlertComponent} from "./UserSide/alert/alert.component";
 import {AlertService} from "./UserSide/alert/alert.service";
 //fin my moduls import
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
+
+
 
 @NgModule({
     declarations: [
@@ -97,10 +100,10 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     CustomModal,
       SigneUpComponent,
       GaleryComponent,
-      MapComponent,
+     // MapComponent,
       MesLocationComponent,
-      DatePickerComponent,
-      TimePickerComponent,
+      //DatePickerComponent,
+      //TimePickerComponent,
       NgbdModalComponent,
       LocationLayoutComponent,
       NotificationsComponent,
@@ -118,9 +121,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
       AlertComponent
   ],
   imports: [
-    BrowserModule,
-    OwlDateTimeModule, 
-    OwlNativeDateTimeModule,
+    BrowserModule, 
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
     HttpModule,
     JsonpModule,
@@ -128,9 +129,9 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     ModalModule.forRoot(),
     BootstrapModalModule,
     NgbModule.forRoot(),
-    AgmCoreModule.forRoot({
+    /*AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAUpkhMUOGW4zcxGTZy6bfHa-QSxgfVecU'
-    }),
+    }),*/
     NgxMyDatePickerModule,
     MomentModule,
     SimpleNotificationsModule.forRoot(),
@@ -141,7 +142,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
       storageType: 'sessionStorage'
 
     })
-
+,AngularDateTimePickerModule
   ],
   providers: [
     AlertService,AdminService, UserService,AgenceService,LocationService,VoitureService,

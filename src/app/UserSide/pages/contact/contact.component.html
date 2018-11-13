@@ -27,7 +27,7 @@
           </div>
     </div>
     <div class="col-sm-6">
-        <map></map>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.5469107225667!2d-7.638674149549994!3d33.59111148063946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d2ec5286fda9%3A0x33ed6479f15e23e5!2sBCNG%3A+Centre+d&#39;affaires+et+de+domiciliation+Casablanca!5e0!3m2!1sen!2sma!4v1542039043808" width="460" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
 </div>
@@ -49,10 +49,14 @@
       <label for="name">Votre message</label>
       <textarea class="form-control" rows="5" id="message"></textarea>
     </div>
+    <div *ngIf="show" class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Succès Merci de nous avoir contacté nous vous contacterons très prochainement</div>
+
     <div class="col-md-4 ">
     <div class="form-group">
 
-      <button class="btn btn-success btn-block btn-lg ">
+
+
+      <button class="btn btn-success btn-block btn-lg "  (click)="go()">
         <i class="fa fa-send-o"></i>
         Envoyer
       </button>

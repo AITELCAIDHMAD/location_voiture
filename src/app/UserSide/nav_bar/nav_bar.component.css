@@ -3,6 +3,10 @@ body{
   padding:50px;
 }
 
+.logo_image{
+  position: relative;
+  top:-27px;
+}
 #login-dp{
   min-width: 250px;
   padding: 14px 14px 0;

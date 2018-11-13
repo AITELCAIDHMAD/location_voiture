@@ -38,7 +38,8 @@ export class UserFormComponent {
     this.user=new User();
 
       this.service.getUserById(localStorage.getItem('idUser')).subscribe((data)=>{
-      this.user=data[0];
+        if(data[0]!=undefined && data[0]!=null)
+                 this.user=data[0];
       })
 
 
